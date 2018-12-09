@@ -39,11 +39,76 @@ def sum_cumulative(listNum):
 def middle(listin):
     listout=listin[1:len(listin)-1]
     return listout
-demolist=[1,2,3,4,5]
-print(middle(demolist))
-print(demolist)
+# demolist=[1,2,3,4,5]
+# print(middle(demolist))
+# print(demolist)
 def chop(listin):
     del listin[0]
     del listin[-1]
-print(chop(demolist))
-print(demolist)
+# print(chop(demolist))
+# print(demolist)
+
+#  EX. 10.6
+def is_sorted(listin):
+    sorted=listin[:]
+
+    sorted.sort()
+    if sorted == listin:
+        return True
+    else:
+        return False
+# print(is_sorted(['a','b','f','e']))
+#  EX. 10.7
+def is_anagram(worda,wordb):
+    wordatmp=[]
+    wordbtmp=[]
+    wordatmp.extend(worda)
+    wordbtmp.extend(wordb)
+    print(worda)
+    print(wordb)
+    wordatmp.sort()
+    wordbtmp.sort()
+    print(wordatmp)
+    print(wordbtmp)
+    if wordatmp==wordbtmp:
+        return True
+    else:
+        return False
+# print(is_anagram('stop','spot'))
+# 10.8
+def has_duplicates(listin):
+    for i,element in enumerate(listin):
+        if listin.count(element) != 1:
+            return True
+    return False
+# print(has_duplicates(['apple','pine','cake']))
+def remove_duplicate(listin):
+    for i,element in enumerate(listin):
+        if listin.count(element)!=1:
+            del listin[i]
+# duplist=['glass','student','table','student','glass']
+# print(duplist)
+# remove_duplicate(duplist)
+# print(duplist)
+def readword_append(wordfile):
+    import time
+    # timestart=time.time()
+    fin=open(wordfile)
+    listword=[]
+    for line in fin:
+        listword.append(line.strip())
+    # timeused=time.time()-timestart
+    # print(timeused)
+    return listword
+def readword_sumidiom(wordfile):
+    import time
+    timestart=time.time()
+    fin=open(wordfile)
+    listword=[]
+    for line in fin:
+        listword=listword+[line.strip()]
+    timeused=time.time()-timestart
+    print(timeused)
+    return listword,timeused
+# outlist,time=readword_append('words.txt')
+# outlist,time=readword_sumidiom('words.txt')
