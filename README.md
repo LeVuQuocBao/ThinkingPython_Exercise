@@ -1,2 +1,2 @@
 # ThinkingPython_Exercise
-This respository present my code for ThinkPython book's exercise
+This respository presents my codes for ThinkPython book's exercises
