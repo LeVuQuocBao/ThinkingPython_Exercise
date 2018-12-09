@@ -1,4 +1,6 @@
 from structshape import structshape
+
+
 # 12.1 Most frequent
 def hist_text(string):
     hisdict = dict()
